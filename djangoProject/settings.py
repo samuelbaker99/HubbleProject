@@ -132,3 +132,15 @@ LOGIN_REDIRECT_URL = 'hubbleHome'
 
 LOGIN_URL = 'login'
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.gmail.com'
+
+EMAIL_PORT = 587
+
+EMAIL_USE_TLS = True
+
+EMAIL_HOST_USER = 'billyashton1965@gmail.com'
+
+EMAIL_HOST_PASSWORD = 'B1llya5ht0n'
+
