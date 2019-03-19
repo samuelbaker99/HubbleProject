@@ -1,4 +1,4 @@
 # djangoProject
 
 
-# Hubble, a university based social networking site.
+Hubble, a university based social networking site.
