@@ -142,5 +142,5 @@ EMAIL_USE_TLS = True
 
 EMAIL_HOST_USER = 'billyashton1965@gmail.com'
 
-EMAIL_HOST_PASSWORD = 'B1llya5ht0n'
+EMAIL_HOST_PASSWORD = *env
 
