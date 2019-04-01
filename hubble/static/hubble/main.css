@@ -29,10 +29,9 @@ ul {
 }
 
 .dropdown .dropdown-menu {
-    background-color: #ff8d31;
-    padding-top: 2px;
-    border-width: 0px;
-    align-content: left;
+    background-color: #ff8d33;
+    padding-top: 1px;
+    border: 1px solid #ff8d33;
 }
 
 
@@ -40,6 +39,16 @@ ul {
     color: white;
     margin-left: 6px;
     text-decoration: none;
+}
+
+.lincoln {
+    border-bottom: 1.5px solid white;
+    padding-bottom: 6px;
+    margin-top: 2px;
+}
+
+.hull {
+    margin-top: 2.5px;
 }
 
 .dropdown-menu .dropdown-link:hover {
@@ -53,6 +62,7 @@ ul {
 
 .dropdown-menu .divider {
     color: white;
+    width: 2px;
 }
 
 .content-section {
