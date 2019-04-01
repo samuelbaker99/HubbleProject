@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -29,8 +30,18 @@
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
               <a class="nav-item nav-link" href="{% url 'hubbleHome' %}">Home</a>
-              <a class="nav-item nav-link" href="{% url 'hubbleAbout' %}">Hubs</a>
-              <a class="nav-item nav-link" href="{% url 'hubbleAbout' %}">Marketplace</a>
+              <li class="dropdown">
+                
+              <a class="nav-item nav-link dropdown-toggle" data-toggle="dropdown" href="#">Hubs
+                  <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                      <li><a href="#">University of Lincoln</a></li>
+                      <li class="divider"></li> 
+                      <li><a href="#">University of Hull</a></li>
+                  </ul>
+                </li>
+                
+              <a class="nav-item nav-link" href="{% url 'hubbleMarket' %}">Marketplace</a>
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
