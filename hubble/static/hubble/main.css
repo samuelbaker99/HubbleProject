@@ -24,11 +24,36 @@ ul {
   color: #cbd5db;
 }
 
-.site-header .navbar-nav .nav-link.active {
+.site-header .navbar-nav .nav-link:active {
   font-weight: 500;
 }
 
+.dropdown .dropdown-menu {
+    background-color: #ff8d31;
+    padding-top: 2px;
+    border-width: 0px;
+    align-content: left;
+}
 
+
+.dropdown-menu .dropdown-link {
+    color: white;
+    margin-left: 6px;
+    text-decoration: none;
+}
+
+.dropdown-menu .dropdown-link:hover {
+    color: #cbd5db;
+}
+
+.dropdown-menu .dropdown-link:active {
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.dropdown-menu .divider {
+    color: white;
+}
 
 .content-section {
   background: #ffffff;

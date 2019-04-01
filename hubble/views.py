@@ -66,4 +66,12 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 def market (request):
     return render(request, 'hubble/market.html', {'title': 'Marketplace'})
 
+def lincoln (request):
+    return render(request, 'hubble/lincoln.html',
+    {'title': 'University of Lincoln'})
+
+def hull (request):
+    return render(request, 'hubble/hull.html',
+    {'title': 'University of Hull'})
+
 # Create your views here.
