@@ -62,7 +62,6 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         if self.request.user == post.author:
             return True
         return False
-    
 
 def market (request):
     return render(request, 'hubble/market.html', {'title': 'Marketplace'})
