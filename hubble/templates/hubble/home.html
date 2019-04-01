@@ -7,11 +7,15 @@
             <img class = "rounded-circle article-img" src="{{ post.author.profile.image.url }}">
           <div class="media-body">
             <div class="article-metadata">
-              <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
+              <h4 class="mr-2" post.author.profile.display_name %}>{{ post.author.profile.display_name }}</h4>
+              <a class="mr-2" href="{% url 'user-posts' post.author.username %}">@{{ post.author }}</a>
               <small class="text-muted">{{ post.date_posted|date:"d F Y · H:i a" }}</small>
             </div>
             <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
-            <p class="article-content">{{ post.content }}</p>
+            <h5 class="article-subtitle">{{ post.subtitle }}</h5>
+            <p></p>
+            <p></p>
+            <p class="article-content">{{ post.content|truncatewords_html:100 }}</p>
           </div>
         </article>
     {% endfor %}

@@ -16,6 +16,7 @@ ul {
   background-color: #ff8d33;
 }
 
+
 .site-header .navbar-nav .nav-link {
   color: #ffffff;
 }
@@ -75,12 +76,18 @@ ul {
 
 .article-title {
   color: #444444;
+  text-decoration: none;
 }
 
 a.article-title:hover {
   color: #428bca;
   text-decoration: none;
 }
+
+.article-subtitle {
+  color: #444444;
+}
+
 
 .article-content {
   white-space: pre-line;
