@@ -34,7 +34,7 @@ ALLOWED_HOSTS = ['hubble41.herokuapp.com']
 
 INSTALLED_APPS = [
     'users.apps.UsersConfig',
-    'hubble41.apps.HubbleConfig',
+    'hubble.apps.HubbleConfig',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'friendship',
 ]
 
 MIDDLEWARE = [

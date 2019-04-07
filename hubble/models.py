@@ -19,10 +19,12 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse('post-detail', kwargs={'pk': self.pk})
     
-class Item(models.Model):
-    name = models.CharField(max_length=50)
-    description = models.TextField()
+class Sell(models.Model):
+    title = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='auction')
     date_posted = models.DateTimeField(default=timezone.now)
+    price = models.CharField(max_length=4)
     seller = models.ForeignKey(User, on_delete=models.CASCADE)
+    
     
     
