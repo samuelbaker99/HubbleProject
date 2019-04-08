@@ -114,6 +114,10 @@ class ItemDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
             return True
         return False
     
+class ItemPurchaseView(DeleteView):
+    model = Item
+    success_url = '/'
+    
 def market(request):
     context = {
         'items': Item.objects.all()
