@@ -3,6 +3,28 @@
 
 <h1>Marketplace</h1>
 
+<p></p>
+
+{% for item in items %}
+
+<article class="media content-section">
+    <img class = "rounded-circle article-img" src="{{ item.seller.profile.image.url }}">
+          <div class="media-body">
+            <div class="article-metadata">
+              <h4 class="mr-2" item.seller.profile.display_name %}>{{ item.seller.profile.display_name }}</h4>
+              <a class="mr-1" href="{% url 'user-posts' item.seller.username %}">@{{ item.seller.username }}</a>
+            
+              <a class="mr-1" href='#'>{{ item.seller.profile.university }}</a>
+              <small class="text-muted">{{ item.date_posted|date:"d F Y · H:i a" }}</small>
+         </div>
+        <h2><a class="article-title" href="{% url 'item-detail' item.id %}">{{ item.title }}</a></h2>
+        <h3 class="article-subtitle">{{ item.price }}</h3>
+        <img class = "auction" src="{{ item.image.url }}">
+    </div>
+</article>
+
+        
+{% endfor %}
 
 
 {% endblock %}

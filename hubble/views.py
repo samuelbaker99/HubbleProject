@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 from friendship.models import Friend, Follow
-from .models import Post, Sell
+from .models import Post, Item
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 def home(request):
@@ -71,10 +71,54 @@ class HubPostListView(ListView):
     context_object_name = 'posts'
     ordering = ['-date_posted']
     paginate_by = 4
+
+class MarketListView(ListView):
+    model = Item
+    template_name = 'hubble/market.html'
+    context_object_name = 'items'
+    ordering = ['-date_posted']
+    paginate_by = 4
     
+class ItemDetailView(DetailView):
+    model = Item
     
-def market (request):
-    return render(request, 'hubble/market.html', {'title': 'Marketplace'})
+class ItemCreateView(LoginRequiredMixin, CreateView):
+    model = Item
+    fields = ['title', 'price', 'image']
+    
+    def form_valid(self, form):
+        form.instance.seller = self.request.user
+        return super().form_valid(form)
+    
+class ItemUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Item
+    fields = ['title', 'price', 'image']
+    
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+    
+    def test_func(self):
+        item = self.get_object()
+        if self.request.user == item.seller:
+            return True
+        return False
+    
+class ItemDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Item
+    success_url = '/'
+    
+    def test_func(self):
+        item = self.get_object()
+        if self.request.user == item.seller:
+            return True
+        return False
+    
+def market(request):
+    context = {
+        'items': Item.objects.all()
+    }
+    return render(request, 'hubble/market.html', context)
 
 def hull (request):
     return render(request, 'hubble/hull.html',

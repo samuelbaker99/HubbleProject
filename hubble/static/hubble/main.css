@@ -99,6 +99,14 @@ a.article-title:hover {
   margin-right: 16px;
 }
 
+img.auction {
+  max-height: 150px;
+}
+
+img.auction-detail {
+    max-height: 300px;
+}
+
 .article-metadata {
   padding-bottom: 1px;
   margin-bottom: 4px;

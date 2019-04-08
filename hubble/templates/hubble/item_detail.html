@@ -1,0 +1,31 @@
+{% extends "hubble/base.html" %}
+{% block content %}
+        <article class="media content-section">
+            <img class = "rounded-circle article-img" src="{{ object.seller.profile.image.url }}">
+          <div class="media-body">
+            <div class="article-metadata">
+              <h4 class="mr-2" item.seller.profile.display_name %}>{{ item.seller.profile.display_name }}</h4>
+              <a class="mr-2" href="{% url 'user-posts' object.seller.username %}">@{{ object.seller }}</a>
+              <small class="text-muted">{{ object.date_posted|date:"d F Y · H:i a" }}</small>
+                
+                {% if object.seller == user %}
+                    <div>
+                        <a class ="btn btn-outline-secondary btn-sm mt-1 mb-1" href="{% url 'item-update' object.id %}">Edit</a>
+
+                        <a class ="btn btn-outline-danger btn-sm mt-1 mb-1" href="{% url 'item-delete' object.id %}">Delete</a>
+
+                    </div>
+                
+                {% else %}
+                    <div>
+                        <a class = "btn btn-outline-info btn-sm mt-1 mb-1"
+                        href = "#">Purchase</a>
+                    </div>
+                {% endif %}
+            </div>
+            <h2 class="article-title">{{ object.title }}</h2>
+            <h3 class="article-subtitle">{{ item.price }}</h3>
+            <img class = "auction-detail" src="{{ item.image.url }}">
+          </div>
+        </article>
+{% endblock content %}
