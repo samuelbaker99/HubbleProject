@@ -21,7 +21,7 @@ class Post(models.Model):
     
 class Item(models.Model):
     title = models.CharField(max_length=100)
-    image = models.ImageField(default='ftp.jpg',upload_to='auction')
+    image = models.ImageField(upload_to='auction')
     date_posted = models.DateTimeField(default=timezone.now)
     price = models.CharField(max_length=8)
     seller = models.ForeignKey(User, on_delete=models.CASCADE)

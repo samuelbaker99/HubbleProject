@@ -3,6 +3,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from .views import PostListView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView, UserPostListView, HubPostListView, MarketListView, ItemDetailView, ItemCreateView, ItemUpdateView, ItemDeleteView
 from . import views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', PostListView.as_view(), name='hubbleHome'),
