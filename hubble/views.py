@@ -106,7 +106,7 @@ class ItemUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     
 class ItemDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Item
-    success_url = '/'
+    success_url = '/market/'
     
     def test_func(self):
         item = self.get_object()

@@ -18,14 +18,16 @@
                 
                 {% else %}
                     <div>
-                        <a class = "btn btn-outline-info btn-sm mt-1 mb-1"
+                        <a class = "btn btn-outline-info btn-sm mt-2 mb-2"
                         href = "#">Purchase</a>
                     </div>
                 {% endif %}
             </div>
             <h2 class="article-title">{{ object.title }}</h2>
             <h3 class="article-subtitle">{{ item.price }}</h3>
+            {% if item.image %}
             <img class = "auction-detail" src="{{ item.image.url }}">
+            {% endif %}
           </div>
         </article>
 {% endblock content %}

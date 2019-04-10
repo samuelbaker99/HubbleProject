@@ -19,7 +19,9 @@
          </div>
         <h2><a class="article-title" href="{% url 'item-detail' item.id %}">{{ item.title }}</a></h2>
         <h3 class="article-subtitle">{{ item.price }}</h3>
-        <img class = "auction" src="{{ item.image.url }}">
+        {% if item.image %}
+        <img class="auction" src="{{ item.image.url }}">
+              {% endif %}
     </div>
 </article>
 

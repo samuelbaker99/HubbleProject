@@ -8,7 +8,7 @@ from PIL import Image
 
 class Post(models.Model):
     title = models.CharField(max_length=75)
-    subtitle = models.CharField(max_length=200, default='')
+    subtitle = models.CharField(max_length=200, blank=True)
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
