@@ -3,7 +3,6 @@ from django.contrib import messages
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from django.contrib.auth.decorators import login_required
 import mysql.connector
-from django.db.backends.mysql.base import CursorWrapper
 
 # Create your views here.
 
