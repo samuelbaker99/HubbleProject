@@ -1,4 +1,4 @@
-import mysql.connector
+from mysql import mysql.connector
 
 def get_connection():
     if 'db' not in locals():
