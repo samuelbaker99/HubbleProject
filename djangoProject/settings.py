@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'djangoProject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'mysql.connector.django',
         'NAME': 'hubble41',
         'HOST': 'heroku_c1eaab334582a09',
         'USER': 'b0ac306c278038',
