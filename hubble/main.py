@@ -1,3 +1,4 @@
+from django.db.backends.mysql.base import CursorWrapper
 import mysql.connector
 
 def get_connection():
