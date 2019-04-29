@@ -1,8 +1,8 @@
-
+import mySQLdb
 
 def get_connection():
     if 'db' not in locals():
-        db = mysql.connector.connect(host="localhost",user="root",passwd="",database="hubble41")
+        db = mysql.connector.connect(host="heroku_c1eaab334582a09	",user="b0ac306c278038",passwd="cf3ef000",database="hubble41")
     return db
 
 def close_connection():
